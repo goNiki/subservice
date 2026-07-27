@@ -1,12 +1,15 @@
 package config
 
-import "time"
+import (
+	"time"
+
+	"github.com/goNiki/subservice/internal/infrastructure/config/env"
+)
 
 type Logger interface {
 	Level() string
-	Format() string
-	Output() string
-	FilePath() string
+	Console() env.ConsoleChannel
+	File() env.FileChannel
 }
 
 type Postgres interface {
