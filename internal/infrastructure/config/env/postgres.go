@@ -71,7 +71,7 @@ func (cfg *postgresConfig) MaxConns() int32 {
 }
 
 func (cfg *postgresConfig) MinConns() int32 {
-	return cfg.MinConns()
+	return cfg.raw.MinConns
 }
 
 func (cfg *postgresConfig) MaxConnLifeTime() time.Duration {

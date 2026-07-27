@@ -21,7 +21,7 @@ type consoleEnvConfig struct {
 
 type fileEnvConfig struct {
 	Enabled  bool   `env:"LOGGER_FILE_ENABLED,required"`
-	Format   string `env:"LOGGER_FILE_FORMA,required"`
+	Format   string `env:"LOGGER_FILE_FORMAT,required"`
 	FilePath string `env:"LOGGER_FILE_PATH,required"`
 }
 
