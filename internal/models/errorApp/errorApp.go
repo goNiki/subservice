@@ -21,3 +21,16 @@ var (
 	ErrCreateNewConnect    = errors.New("failed to create new connect with postgres")
 	ErrConnectDatabase     = errors.New("failed to connect with postgres")
 )
+
+//Migrator
+var (
+	ErrSetGooseDialect = errors.New("failed to set goose dialect")
+	ErrCloseDb         = errors.New("failed to close db connection")
+	ErrUpMigration     = errors.New("failed to up migration")
+	ErrUpToMigration   = errors.New("failed to upto migration")
+	ErrDownMigration   = errors.New("failed to down migration")
+	ErrDownToMigration = errors.New("failed to downto migration")
+	ErrCreateMigration = errors.New("failed to create migration")
+	ErrGetDbVersion    = errors.New("failed to get db version")
+	ErrGetGooseStatus  = errors.New("failed to get goose status")
+)
