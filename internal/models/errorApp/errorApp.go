@@ -14,3 +14,10 @@ var (
 var (
 	ErrFailedOpenLogFile = errors.New("failed to open log file ")
 )
+
+//DataBase
+var (
+	ErrParseDatabaseConfig = errors.New("failed parse database config")
+	ErrCreateNewConnect    = errors.New("failed to create new connect with postgres")
+	ErrConnectDatabase     = errors.New("failed to connect with postgres")
+)
