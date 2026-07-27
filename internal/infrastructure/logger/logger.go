@@ -10,7 +10,7 @@ import (
 )
 
 type Logger struct {
-	log *slog.Logger
+	Log *slog.Logger
 }
 
 func InitLogger(cfg config.Logger) (*Logger, error) {
@@ -67,6 +67,6 @@ func InitLogger(cfg config.Logger) (*Logger, error) {
 	logger := slog.New(handler)
 
 	return &Logger{
-		log: logger,
+		Log: logger,
 	}, nil
 }
