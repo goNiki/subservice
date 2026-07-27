@@ -7,6 +7,8 @@ import (
 
 	"github.com/goNiki/subservice/internal/infrastructure/config"
 	errorapp "github.com/goNiki/subservice/internal/models/errorApp"
+	"github.com/jackc/pgx/v5"
+	"github.com/jackc/pgx/v5/pgconn"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
@@ -41,5 +43,10 @@ func InitDatabase(cfg config.Postgres) (*DB, error) {
 	return &DB{
 		Pool: pool,
 	}, nil
+}
 
+type QueryExecutor interface {
+	QueryRow(ctx context.Context, sql string, arg ...any) pgx.Row
+	Query(ctx context.Context, sql string, arg ...any) (pgx.Rows, error)
+	Exec(ctx context.Context, sql string, arg ...any) (pgconn.CommandTag, error)
 }
